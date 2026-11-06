@@ -20,6 +20,18 @@
         <div>Level <strong id="level">1</strong></div>
         <div>Best <strong id="best">0</strong></div>
       </div>
+      <div class="meters" aria-label="Player status">
+        <label class="meter power-meter" for="power-bar">
+          <span>Pulse power</span>
+          <progress id="power-bar" max="100" value="0">0%</progress>
+          <output id="power-value" for="power-bar">0%</output>
+        </label>
+        <label class="meter hunger-meter" for="hunger-bar">
+          <span>Hunger</span>
+          <progress id="hunger-bar" max="100" value="50">50%</progress>
+          <output id="hunger-value" for="hunger-bar">50%</output>
+        </label>
+      </div>
       <div class="stage">
         <canvas id="arena" width="720" height="432" tabindex="0" aria-label="Game arena" aria-describedby="mission controls">This game requires Canvas support.</canvas>
         <div class="overlay" id="overlay">
@@ -33,6 +45,7 @@
       </div>
       <div class="legend" id="controls">
         <span><kbd>WASD</kbd> or <kbd>↑ ← ↓ →</kbd> to move</span>
+        <span>Reverse to pulse · <kbd>Space</kbd> at full power</span>
         <span><b class="spark">◆</b> Spark &nbsp; <b class="drone">✕</b> Drone</span>
       </div>
     </section>

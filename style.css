@@ -23,6 +23,15 @@ header > p:last-child { color: var(--muted); margin-bottom: 0; }
 .cabinet { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--panel); box-shadow: 0 16px 48px #0005; }
 .hud, .legend { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 14px; padding: 10px 14px; color: var(--muted); }
 .hud strong { color: var(--text); font-size: 1.2rem; margin-left: 5px; }
+.meters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 18px; padding: 0 14px 12px; }
+.meter { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 9px; color: var(--muted); font: 600 .72rem/1.3 ui-monospace, monospace; letter-spacing: .04em; }
+.meter output { color: var(--text); min-width: 3.5em; text-align: right; }
+.meter progress { appearance: none; width: 100%; height: 10px; overflow: hidden; border: 1px solid var(--line); border-radius: 99px; background: var(--page); }
+.meter progress::-webkit-progress-bar { background: var(--page); }
+.power-meter progress::-webkit-progress-value { background: var(--spark); border-radius: 99px; }
+.hunger-meter progress::-webkit-progress-value { background: var(--accent); border-radius: 99px; }
+.power-meter progress::-moz-progress-bar { background: var(--spark); border-radius: 99px; }
+.hunger-meter progress::-moz-progress-bar { background: var(--accent); border-radius: 99px; }
 .stage { position: relative; }
 canvas { display: block; width: 100%; height: auto; background: var(--page); }
 canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
@@ -40,3 +49,4 @@ kbd { color: var(--text); font: inherit; }
 .touch button { min-width: 48px; touch-action: none; user-select: none; }
 footer { margin-top: 16px; color: var(--muted); }
 @media (any-pointer: coarse), (max-width: 600px) { .touch { display: flex; } }
+@media (max-width: 480px) { .meters { grid-template-columns: 1fr; } }
